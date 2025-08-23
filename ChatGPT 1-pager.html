@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightSpark Electricians</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body { 
+      margin: 0; 
+      font-family: 'Open Sans', Arial, sans-serif; 
+      line-height: 1.7; 
+      color: #2d3748; 
+      background: #f9fafb; 
+    }
+    
+    /* Header Styles - Responsive but keeping desktop layout */
+    header { 
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #1e3a8a; 
+      color: rgb(255, 255, 255); 
+      padding: 20px 40px; 
+      display: flex; 
+      position: fixed;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      justify-content: space-between; 
+      align-items: center; 
+      flex-wrap: nowrap; 
+      font-family: 'Montserrat', sans-serif;
+      height: 80px;
+      overflow: visible;
+    }
+    
+header img {
+  height: 250px; 
+  width: auto;     
+  margin: 0;  
+  width: 300px;
+}
+
+    
+    nav { 
+      align-items: center;
+      margin-right: 15px;
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    nav a { 
+      color: white; 
+      margin: 0 15px; 
+      text-decoration: none; 
+      font-weight: 600; 
+      transition: 0.3s; 
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    nav a:hover { color: #f59e0b; }
+    
+    .header-call { 
+      font-weight: bold; 
+      background: #f59e0b; 
+      color: #1e3a8a; 
+      padding: 8px 15px; 
+      border-radius: 6px; 
+      font-family: 'Montserrat', sans-serif;
+      white-space: nowrap;
+    }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      background: transparent;
+    }
+    
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+    
+    /* Hero Section with Background Image */
+    .hero { 
+      background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url('../Images-Demo1/download (1).jpg') no-repeat center center/cover;
+      color: white; 
+      text-align: center; 
+      padding: 100px 20px; 
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 { 
+      font-size: 3rem; 
+      margin-bottom: 20px; 
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero p { 
+      font-size: 1.2rem; 
+      max-width: 700px; 
+      margin: auto; 
+      color: #f8fafc; 
+    }
+    
+    section { 
+      padding: 70px 40px; 
+      max-width: 1200px; 
+      margin: auto; 
+      position: relative;
+    }
+    
+    section.bg-light { background: #ffffff; }
+    
+    h2 { 
+      color: #1e3a8a; 
+      margin-bottom: 25px; 
+      text-align: center; 
+      font-size: 2.2rem; 
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-content {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-quote {
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin: 30px 0;
+      padding: 25px;
+      background: rgba(248, 249, 250, 0.9);
+      border-left: 4px solid #f59e0b;
+      border-radius: 8px;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Stats strip */
+    .stats { 
+      display: flex; 
+      justify-content: space-around; 
+      margin-top: 40px; 
+      text-align: center; 
+      flex-wrap: wrap; 
+      gap: 20px; 
+      position: relative;
+      z-index: 2;
+    }
+    
+    .stat { 
+      flex: 1 1 200px; 
+      background: rgba(255, 255, 255, 0.95); 
+      padding: 20px; 
+      border-radius: 10px; 
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+    }
+    
+    .stat h3 { 
+      font-size: 1.8rem; 
+      color: #f59e0b; 
+      margin: 0; 
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .stat p { 
+      margin: 5px 0 0; 
+    }
+    
+    /* Call-to-action bar */
+    .cta-bar { 
+      background: #1e3a8a; 
+      color: white; 
+      text-align: center; 
+      padding: 40px 20px; 
+      margin-top: 40px; 
+      border-radius: 10px; 
+      position: relative;
+      z-index: 2;
+    }
+    
+    .cta-bar h3 { 
+      font-size: 1.8rem; 
+      margin-bottom: 15px; 
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .cta-bar a { 
+      display: inline-block; 
+      background: #f59e0b; 
+      color: #1e3a8a; 
+      padding: 12px 25px; 
+      border-radius: 6px; 
+      font-weight: bold; 
+      text-decoration: none; 
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .cta-bar a:hover { 
+      background: #ffffff; 
+      color: #1e3a8a; 
+    }
+    
+    /* Services Section with Background Image */
+    .services { 
+      padding: 80px 40px;
+      background: linear-gradient(rgba(255, 255, 255, 0.114), rgba(255, 255, 255, 0.9)), url('../Images-Demo1/download (3).jpg') no-repeat center center/cover;
+      position: relative;
+    }
+    
+    .services::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(249, 250, 251, 0.7);
+      z-index: 1;
+    }
+    
+    .services-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 30px; 
+      position: relative;
+      z-index: 2;
+    }
+    
+    .service { 
+      background: rgba(255, 255, 255, 0.95); 
+      padding: 25px; 
+      border-radius: 12px; 
+      text-align: center; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+      transition: 0.3s; 
+    }
+    
+    .service:hover { 
+      transform: translateY(-5px); 
+    }
+    
+    .service i { 
+      font-size: 40px; 
+      color: #f59e0b; 
+      margin-bottom: 15px; 
+    }
+    
+    .service h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Why Us */
+    .why-us { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 30px; 
+      justify-content: center; 
+    }
+    
+    .why-us div { 
+      flex: 1 1 300px; 
+      background: #ffffff; 
+      padding: 20px; 
+      border-radius: 10px; 
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05); 
+    }
+    
+    .why-us h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Testimonials */
+    .testimonials blockquote { 
+      background: #ffffff; 
+      padding: 20px; 
+      border-left: 5px solid #f59e0b; 
+      margin-bottom: 20px; 
+      font-style: italic; 
+      border-radius: 5px; 
+    }
+    
+    /* FAQ */
+    .faq-item { 
+      margin-bottom: 15px; 
+    }
+    
+    .faq-item h4 { 
+      cursor: pointer; 
+      background: #f59e0b; 
+      padding: 12px; 
+      border-radius: 6px; 
+      color: #1e3a8a; 
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .faq-item p { 
+      display: none; 
+      padding: 10px; 
+      background: #ffffff; 
+      border-radius: 5px; 
+    }
+    
+    /* Contact Section with Background Image */
+    .contact { 
+      padding: 80px 40px;
+      background: linear-gradient(rgba(255, 255, 255, 0.109), rgba(255, 255, 255, 0.9)), url('../Images-Demo1/download.jpg') no-repeat center center/cover;
+      position: relative;
+    }
+    
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(249, 250, 251, 0.7);
+      z-index: 1;
+    }
+    
+    .contact form { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+      max-width: 600px; 
+      margin: auto; 
+      position: relative;
+      z-index: 2;
+    }
+    
+    .contact input, .contact textarea { 
+      padding: 12px; 
+      border: 1px solid #ccc; 
+      border-radius: 6px; 
+      font-family: 'Open Sans', sans-serif;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .contact button { 
+      padding: 15px; 
+      border: none; 
+      background: #1e3a8a; 
+      color: white; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      transition: 0.3s; 
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    .contact button:hover { 
+      background: #f59e0b; 
+      color: #1e3a8a; 
+    }
+    
+    .contact-call-btn { 
+      display: inline-block; 
+      background: #f59e0b; 
+      color: #1e3a8a; 
+      padding: 12px 25px; 
+      border-radius: 6px; 
+      font-weight: bold; 
+      text-decoration: none; 
+      margin-top: 20px; 
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .contact-call-btn:hover { 
+      background: #1e3a8a; 
+      color: white; 
+    }
+    
+    iframe { 
+      width: 100%; 
+      height: 320px; 
+      border: 0; 
+      border-radius: 10px; 
+      margin-top: 20px; 
+      position: relative;
+      z-index: 2;
+    }
+    
+    footer { 
+      background: #1e3a8a; 
+      color: white; 
+      text-align: center; 
+      padding: 20px; 
+    }
+    
+    footer a { 
+      color: #f59e0b; 
+      margin: 0 10px; 
+      text-decoration: none; 
+    }
+  
+    /* Back to top button */
+    #back-to-top { 
+      display: none; 
+      position: fixed; 
+      bottom: 30px; 
+      right: 30px; 
+      z-index: 99; 
+      border: none; 
+      outline: none; 
+      background-color: #1e3a8a; 
+      color: white; 
+      cursor: pointer; 
+      width: 50px; 
+      height: 50px; 
+      border-radius: 50%; 
+      font-size: 24px; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+      transition: 0.3s; 
+    }
+    
+    #back-to-top:hover { 
+      background-color: #f59e0b; 
+      color: #1e3a8a; 
+    }
+    
+    /* Mobile Responsive Styles */
+    @media screen and (max-width: 968px) {
+      header {
+    flex-direction: row; /* keep side by side */
+    justify-content: space-between;
+    align-items: center;
+      }
+      
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+      
+      .header-call {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      header {
+        flex-wrap: nowrap;
+        padding: 12px 15px;
+        flex-direction: row;
+        align-items: center;
+      }
+      header img {
+  margin-bottom: 10px;
+}
+
+      .hamburger {
+        display: flex;
+        order: 3;
+      }
+      
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1e3a8a;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 100;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .nav-active {
+        display: flex;
+      }
+      
+      nav a {
+        display: block;
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0;
+      }
+      
+      .header-call {
+        margin-top: 15px;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .hero {
+        padding: 80px 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      section {
+        padding: 50px 20px;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .why-us div {
+        flex: 1 1 100%;
+      }
+      
+      .stats {
+        flex-direction: column;
+      }
+      
+      .stat {
+        flex: 1 1 100%;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .about-quote {
+        padding: 15px;
+        font-size: 1.1rem;
+      }
+      
+      .header-call {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="../Images-Demo1/Bright_Spark_Electric_Logo_Design-removebg-preview.png" alt="BrightSpark Logo">
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <nav id="nav">
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <div class="header-call"><i class="fas fa-phone"></i> Call Us: +353 987 654 321</div>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>BrightSpark Electricians ⚡</h1>
+    <p>Safe, reliable, and professional electrical services — powering your home & business with trust.</p>
+  </div>
+</div>
+
+<section id="about" class="about bg-light">
+  <h2>About Us</h2>
+  <div class="about-content">
+    <div class="about-quote">
+      "For over 15 years, I've built my career not just on connecting wires, but on connecting with people. 
+      I've seen electrical systems evolve from simple setups to complex smart home networks, and I've made it 
+      my mission to master every change. My experience means I can not only diagnose a problem quickly and 
+      accurately but also foresee potential issues down the line that others might miss. I believe in doing 
+      the job right the first time, with a clean workspace and clear communication. For me, a successful job 
+      isn't finished when the lights turn on; it's finished when my client feels completely safe, informed, 
+      and satisfied."
+    </div>
+    <p>From small home repairs to large commercial installations, we take pride in delivering high-quality work with honesty and care.</p>
+  </div>
+
+  <!-- Stats Strip -->
+  <div class="stats">
+    <div class="stat"><h3>15+</h3><p>Years Experience</p></div>
+    <div class="stat"><h3>500+</h3><p>Projects Completed</p></div>
+    <div class="stat"><h3>1000+</h3><p>Happy Clients</p></div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="cta-bar">
+    <h3>Need an Electrician Today?</h3>
+    <a href="tel:+353987654321"><i class="fas fa-phone"></i> Call Us Now: +353 987 654 321</a>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service"><i class="fas fa-bolt"></i><h3>Emergency Repairs</h3><p>Available 24/7 to keep your home safe and powered when it matters most.</p></div>
+    <div class="service"><i class="fas fa-plug"></i><h3>Rewiring</h3><p>Ensure safety and efficiency with modern rewiring solutions.</p></div>
+    <div class="service"><i class="fas fa-lightbulb"></i><h3>Lighting Design</h3><p>Upgrade your space with energy-efficient indoor & outdoor lighting.</p></div>
+    <div class="service"><i class="fas fa-solar-panel"></i><h3>Solar Installations</h3><p>Go green and save money with eco-friendly energy systems.</p></div>
+    <div class="service"><i class="fas fa-car-battery"></i><h3>EV Charging Stations</h3><p>Future-proof your home with smart charging solutions.</p></div>
+    <!-- Additional services -->
+    <div class="service"><i class="fas fa-home"></i><h3>Home Security Systems</h3><p>Installation of security cameras, alarms, and smart home security solutions.</p></div>
+    <div class="service"><i class="fas fa-tools"></i><h3>Electrical Inspections</h3><p>Comprehensive safety inspections and certification for homes and businesses.</p></div>
+    <div class="service"><i class="fas fa-desktop"></i><h3>Data & Network Wiring</h3><p>Professional installation of data cables and network infrastructure.</p></div>
+  </div>
+</section>
+
+<section id="why" class="why bg-light">
+  <h2>Why Us?</h2>
+  <div class="why-us">
+    <div><h3>✅ Certified Experts</h3><p>Our electricians are fully licensed, insured, and safety-trained.</p></div>
+    <div><h3>⚡ Fast Response</h3><p>Quick turnaround times, especially for emergency situations.</p></div>
+    <div><h3>💡 Honest Pricing</h3><p>Free quotes upfront, no hidden costs — ever.</p></div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <blockquote>“BrightSpark were amazing! Professional, quick, and left my home spotless.” – Sarah K.</blockquote>
+  <blockquote>“They handled my shop rewiring without hassle. Great service!” – Ahmed R.</blockquote>
+  <blockquote>“Their solar install cut my bills by half. Highly recommend!” – Maria P.</blockquote>
+</section>
+
+<section id="faq" class="faq bg-light">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h4>Do you offer emergency callouts?</h4>
+    <p>Yes, we are available 24/7 for emergencies — just call us.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Are your electricians certified?</h4>
+    <p>Yes, all are licensed and insured for your peace of mind.</p>
+  </div>
+  <div class="faq-item">
+    <h4>How much do you charge?</h4>
+    <p>We provide transparent pricing and free quotes upfront.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <div style="text-align:center; margin-top:20px;">
+    <a href="tel:+353987654321" class="contact-call-btn"><i class="fas fa-phone"></i> Call Us: +353 987 654 321</a>
+  </div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152515.2533358751!2d-6.385787!3d53.3244431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1sen!2sie!4v1654567890123!5m2!1sen!2sie" allowfullscreen loading="lazy"></iframe>
+</section>
+
+<footer>
+  <p>© 2025 BrightSpark Electricians | All Rights Reserved</p>
+  <div>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" title="Back to top">↑</button>
+
+<script>
+  // Mobile menu toggle - FIXED
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+
+  // Toggle menu on hamburger click
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+  });
+
+  // Close menu when clicking on a link (mobile only)
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        nav.classList.remove('nav-active');
+      }
+    });
+  });
+
+  // FAQ toggle
+  document.querySelectorAll(".faq-item h4").forEach(q => {
+    q.addEventListener("click", () => {
+      let p = q.nextElementSibling;
+      p.style.display = p.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  // Back to top button
+  const backToTopButton = document.getElementById("back-to-top");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  };
+
+  backToTopButton.addEventListener('click', () => {
+    document.body.scrollTop = 0; // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
+  });
+</script>
+
+
+</body>
+</html>
