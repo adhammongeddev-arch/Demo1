@@ -589,6 +589,7 @@ header img {
     <a href="#contact">Contact</a>
     <div class="header-call"><i class="fas fa-phone"></i> Call Us: +353 987 654 321</div>
   </nav>
+  
 </header>
 
 <div class="hero">
@@ -704,7 +705,13 @@ header img {
   // Mobile menu toggle - FIXED
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
-
+  
+const headerCall = document.querySelector('.header-call');
+headerCall.addEventListener('click', function() {
+  window.location.href = 'tel:+353987654321';
+});
+// Also make it look clickable
+headerCall.style.cursor = 'pointer'
   // Toggle menu on hamburger click
   hamburger.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
