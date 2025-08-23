@@ -750,7 +750,25 @@ headerCall.style.cursor = 'pointer'
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
   });
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+<div id="map" style="height:400px;width:100%;"></div>
+
+<script>
+  function initMap() {
+    var location = { lat: 30.0444, lng: 31.2357 }; // Example: Cairo
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: location
+    });
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+</script>
 
 
 </body>
 </html>
+
