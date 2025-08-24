@@ -106,7 +106,7 @@ header img {
     
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 1;
     }
     
     .hero h1 { 
@@ -564,8 +564,10 @@ header img {
 <body>
 
 <header>
+  <a href="#hero" id="logo">
   <img src="../Images-Demo1/Bright_Spark_Electric_Logo_Design-removebg-preview.png" alt="BrightSpark Logo">
-  <button class="hamburger" id="hamburger">
+  </a>
+    <button class="hamburger" id="hamburger">
     <span></span>
     <span></span>
     <span></span>
@@ -740,8 +742,19 @@ headerCall.style.cursor = 'pointer'
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
   });
 </script>
+  <script>
+  const logo = document.getElementById('logo');
+  const hero = document.getElementById('hero');
+
+  logo.addEventListener('click', function(e) {
+    e.preventDefault(); // prevent default anchor jump
+    hero.scrollIntoView({ behavior: 'smooth' }); // smooth scroll to hero
+  });
+</script>
+  
 </body>
 </html>
+
 
 
 
